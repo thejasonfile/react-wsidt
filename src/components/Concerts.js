@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 class Concerts extends Component {
   render(){
-    if(this.props.concerts.concert_info.length === 0){
+    if(this.props.concerts.length === 0){
       var components = <li className='no-items'>No concerts in your area today! Please check your zipcode or check back later.</li>
     } else {
-      components = this.props.concerts.concert_info.map((concert, index) => {
+      components = this.props.concerts.map((concert, index) => {
         return (
           <div key={index} className="col-md-12 concert">
             <h3>{concert.ticket_url ? <a href={concert.ticket_url} target="_blank">{concert.artist}</a> : concert.artist}</h3>
