@@ -26,9 +26,53 @@ class Index extends Component {
     )
   }
 
+  handleRestaurantButtonClick(event){
+    event.preventDefault()
+    if (event.target.value.length < 5){
+      alert("Zipcode cannot be less than 5 digits!")
+    } else {
+        this.props.getRestaurant(this.props.zipcode)
+      }
+    // var locationPromise = this.getLocation();
+    // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
+  }
+
   handleBarButtonClick(event){
     event.preventDefault()
-    this.props.getBar(this.props.zipcode)
+    if (event.target.value.length < 5){
+      alert("Zipcode cannot be less than 5 digits!")
+    } else {
+        this.props.getBar(this.props.zipcode)
+      }
+  }
+
+  handleMovieButtonClick(event){
+    event.preventDefault()
+    if (event.target.value.length < 5){
+      alert("Zipcode cannot be less than 5 digits!")
+    } else {
+        this.props.getMovie(this.props.zipcode)
+      }
+    // var locationPromise = this.getLocation();
+    // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
+  }
+
+  handleLiveEventsButtonClick(event){
+    event.preventDefault()
+    if (event.target.value.length < 5){
+      alert("Zipcode cannot be less than 5 digits!")
+    } else {
+        this.props.getLiveEvent(this.props.zipcode)
+      }
+  }
+
+  handleConcertButtonClick(event){
+    event.preventDefault()
+    if (event.target.value.length < 5){
+      alert("Zipcode cannot be less than 5 digits!")
+    } else {
+        this.props.getConcert(this.props.zipcode)
+      }
   }
 
   handleTVButtonClick(event){
@@ -44,29 +88,6 @@ class Index extends Component {
       }
   }
 
-  handleConcertButtonClick(event){
-    event.preventDefault()
-    this.props.getConcert(this.props.zipcode)
-  }
-
-  handleLiveEventsButtonClick(event){
-    event.preventDefault()
-    this.props.getLiveEvent(this.props.zipcode)
-  }
-
-  handleRestaurantButtonClick(event){
-    event.preventDefault()
-    this.props.getRestaurant(this.props.zipcode)
-    // var locationPromise = this.getLocation();
-    // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
-  }
-
-  handleMovieButtonClick(event){
-    event.preventDefault()
-    this.props.getMovie(this.props.zipcode)
-    // var locationPromise = this.getLocation();
-    // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
-  }
   //
   // getLocation(callback) {
   //   var promise = new Promise(function(resolve, reject) {
