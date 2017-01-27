@@ -7,7 +7,7 @@ export default function getMovie(zipcode){
       url: 'http://localhost:3000/movies',
       type: 'POST',
       headers: {authorization: localStorage.getItem('jwt')},
-      data: JSON.stringify({data: {zipcode}}),
+      data: JSON.stringify({data: {zipcode: zipcode}}),
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
