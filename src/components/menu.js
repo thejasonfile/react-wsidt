@@ -28,7 +28,7 @@ class Index extends Component {
 
   handleRestaurantButtonClick(event){
     event.preventDefault()
-    if (event.target.value.length < 5){
+    if (this.props.zipcode.length < 5){
       alert("Zipcode cannot be less than 5 digits!")
     } else {
         this.props.getRestaurant(this.props.zipcode)
