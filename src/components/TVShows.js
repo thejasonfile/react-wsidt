@@ -11,7 +11,6 @@ class Shows extends Component {
             <li>Rated: {movie.rating}</li><br />
             <li className="last"><u>Release Date:</u> {movie.release_date}</li>
           </div>
-
       )
     })
 

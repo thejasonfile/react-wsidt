@@ -3,24 +3,33 @@ import { connect } from 'react-redux';
 
 class Movies extends Component {
   render(){
-    var components = this.props.movies.map((movie, index) => {
-      var re = /http:\D*\d*[^&d]/
-      var movieUrl;
-      for(var i = 0; i<movie.showtimes.length; i++){
-        if(movie.showtimes[i].includes('http')){
-          movieUrl = movie.showtimes[i].match(re)[0] + '&location=' + this.props.zipcode
-          break
-        }
+    if(this.props.movies.length === 0){
+      var components = function(){
+        return(
+          <ul>
+            <li>No movies in your area today! Please check your zipcode or check back later.</li>
+          </ul>
+        )
       }
-      return(
-        <div key={index} className="col-md-4">
-          {movie.image_url === "NO IMAGE" ? <li><img className="movie" src="https://s28.postimg.org/gwri9yx1p/no_img.jpg" alt="placeholder" /></li> : <li><img className="movie" src={movie.image_url} alt='movie pic'/></li>}
-          <h3><a href={movieUrl} target="_blank">{movie.title}</a></h3>
-          <li>{movie.description}</li><br />
-          <li>Genres: {movie.genres.join(', ')}</li>
-        </div>
-      )
-    }, this)
+    } else {
+      components = this.props.movies.map((movie, index) => {
+        var re = /http:\D*\d*[^&d]/
+        var movieUrl;
+        for(var i = 0; i<movie.showtimes.length; i++){
+          if(movie.showtimes[i].includes('http')){
+            movieUrl = movie.showtimes[i].match(re)[0] + '&location=' + this.props.zipcode
+            break
+          }
+        }
+        return(
+          <div key={index} className="col-md-4">
+            {movie.image_url === "NO IMAGE" ? <li><img className="movie" src="https://s28.postimg.org/gwri9yx1p/no_img.jpg" alt="placeholder" /></li> : <li><img className="movie" src={movie.image_url} alt='movie pic'/></li>}
+            <h3><a href={movieUrl} target="_blank">{movie.title}</a></h3>
+            <li>{movie.description}</li><br />
+            <li>Genres: {movie.genres.join(', ')}</li>
+          </div>
+        )
+      }, this)}
 
     return(
       <div className='container main components'>

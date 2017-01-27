@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 export default function getMovie(zipcode){
   return function (dispatch){
     $.ajax({
-      url: 'https://rails-wsidt.herokuapp.com/movies',
+      url: 'http://localhost:3000/movies',
       type: 'POST',
       headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({data: {zipcode}}),

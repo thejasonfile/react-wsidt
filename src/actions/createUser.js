@@ -5,7 +5,7 @@ export default function createUser(formValues){
   return function (dispatch){
     dispatch({type: 'CREATING_USER'})
     $.ajax({
-      url: 'https://rails-wsidt.herokuapp.com/users',
+      url: 'http://localhost:3000/users',
       type: 'POST',
       data: JSON.stringify({user: {name: formValues.name, password: formValues.password}}),
       dataType: 'json',

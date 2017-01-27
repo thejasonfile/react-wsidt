@@ -17,7 +17,7 @@ class Bars extends Component {
     //for (var i = 0; i < this.props.bars.length; i++) {combo.push(this.props.bars[i])}
     for (var bar in this.props.bars) {combo.push(this.props.bars[bar])}
     if(this.props.bars.length === 0){
-      var components = <li>You have no bars</li>
+      var components = <li>No bars were found in your area! Please check your zipcode.</li>
     } else {
     components = combo[0].map((bar, index) => {
       return (

@@ -4,7 +4,7 @@ export default function setFavorite(restaurant_id, checked){
   var url = ''
   var type = ''
   if (checked) {
-    url = 'https://rails-wsidt.herokuapp.com/favorites'
+    url = 'http://localhost:3000/favorites'
     type = 'POST'
   } else {
     url = `https://rails-wsidt.herokuapp.com/favorites/${restaurant_id}`

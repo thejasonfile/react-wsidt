@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 export default function getConcert(zipcode){
   return function (dispatch){
     $.ajax({
-      url: 'https://rails-wsidt.herokuapp.com/concerts',
+      url: 'http://localhost:3000/concerts',
       type: 'POST',
       headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({data: {zipcode: zipcode}}),
