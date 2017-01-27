@@ -7,7 +7,7 @@ class Concerts extends Component {
       var components = function(){
         return(
           <ul>
-            <li>No concerts in your area today! Check back later.</li>
+            <li>No concerts in your area today! Please check your zipcode or check back later.</li>
           </ul>
         )
       }

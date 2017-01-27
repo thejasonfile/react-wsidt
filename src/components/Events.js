@@ -7,7 +7,7 @@ class Events extends Component {
         var components = function(){
           return(
             <ul>
-              <li>No events in your area today!  Check back later.</li>
+              <li>No events in your area today! Please check your zipcode or check back later.</li>
             </ul>
           )
         }
