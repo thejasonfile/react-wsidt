@@ -17,7 +17,7 @@ class Restaurants extends Component {
     //for (var i = 0; i<this.props.restaurants.restaurants.length; i++) {combo.push(this.props.restaurants.restaurants[i])}
     for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
     if(this.props.restaurants.length === 0){
-      var components = <li>No restaurants were found in your area! Please check your zipcode.</li>
+      var components = <li className='no-items'>No restaurants were found in your area! Please check your zipcode.</li>
     } else {
     components = combo[0].map((restaurant, index) => {
       return (

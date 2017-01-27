@@ -37,6 +37,7 @@ class Index extends Component {
   }
 
   handleOnZipCodeChange(event){
+    debugger
     this.props.setZipCode(event.target.value)
   }
 

@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 class Events extends Component {
   render(){
       if(this.props.liveEvents.length === 0){
-        var components = function(){
-          return(
-            <ul>
-              <li>No events in your area today! Please check your zipcode or check back later.</li>
-            </ul>
-          )
-        }
+        var components = <li className='no-items'>No events in your area today! Please check your zipcode or check back later.</li>
       } else {
       components = this.props.liveEvents.map((liveEvent, index) => {
         return(

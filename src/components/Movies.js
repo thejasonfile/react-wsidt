@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 class Movies extends Component {
   render(){
     if(this.props.movies.length === 0){
-      var components = function(){
-        return(
-          <ul>
-            <li>No movies in your area today! Please check your zipcode or check back later.</li>
-          </ul>
-        )
-      }
+      var components = <li className='no-items'>No movies in your area today! Please check your zipcode or check back later.</li>
     } else {
       components = this.props.movies.map((movie, index) => {
         var re = /http:\D*\d*[^&d]/
