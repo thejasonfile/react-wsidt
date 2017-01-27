@@ -39,7 +39,7 @@ class Index extends Component {
 
   handleBarButtonClick(event){
     event.preventDefault()
-    if (event.target.value.length < 5){
+    if (this.props.zipcode.length < 5){
       alert("Zipcode cannot be less than 5 digits!")
     } else {
         this.props.getBar(this.props.zipcode)
@@ -48,7 +48,7 @@ class Index extends Component {
 
   handleMovieButtonClick(event){
     event.preventDefault()
-    if (event.target.value.length < 5){
+    if (this.props.zipcode.length < 5){
       alert("Zipcode cannot be less than 5 digits!")
     } else {
         this.props.getMovie(this.props.zipcode)
@@ -59,7 +59,7 @@ class Index extends Component {
 
   handleLiveEventsButtonClick(event){
     event.preventDefault()
-    if (event.target.value.length < 5){
+    if (this.props.zipcode.length < 5){
       alert("Zipcode cannot be less than 5 digits!")
     } else {
         this.props.getLiveEvent(this.props.zipcode)
@@ -68,7 +68,7 @@ class Index extends Component {
 
   handleConcertButtonClick(event){
     event.preventDefault()
-    if (event.target.value.length < 5){
+    if (this.props.zipcode.length < 5){
       alert("Zipcode cannot be less than 5 digits!")
     } else {
         this.props.getConcert(this.props.zipcode)
