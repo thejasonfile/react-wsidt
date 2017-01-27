@@ -37,8 +37,11 @@ class Index extends Component {
   }
 
   handleOnZipCodeChange(event){
-    debugger
-    this.props.setZipCode(event.target.value)
+    if (event.target.value.length > 5){
+      alert("Zipcode cannot be more than 5 digits!")
+    } else {
+        this.props.setZipCode(event.target.value)
+      }
   }
 
   handleConcertButtonClick(event){
