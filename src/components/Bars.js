@@ -28,7 +28,6 @@ class Bars extends Component {
             <li>Yelp Rating: {bar.rating}</li>
             <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>
             {bar.phone !== null ? <li>Phone: {bar.phone}</li> : null}
-            <li>Categories: {bar.categories}</li>
             <label htmlFor="fav_restaurant">Mark as Favorite</label>
             {combo[1].includes(bar.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} />}
           </div>
