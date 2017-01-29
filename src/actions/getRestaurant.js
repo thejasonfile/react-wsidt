@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 export default function getRestaurant(zipcode){
   return function (dispatch){
     $.ajax({
-      url: 'https://rails-wsidt.herokuapp.com/estaurants',
+      url: 'https://rails-wsidt.herokuapp.com/restaurants',
       type: 'POST',
       headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({data: {zipcode: zipcode}}),
