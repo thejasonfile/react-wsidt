@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     if(!localStorage.getItem('jwt')){
       var signIn = (
-        <div className='btn-group btn-group-lg' id="sign-in">
+        <div className='btn-group btn-group-lg text-center' id="sign-in">
           <Link to={'/signin'}><button className='btn btn-primary'>Sign In</button></Link>
           <Link to={'/newuser'}><button className='btn btn-primary'>Sign Up</button></Link>
         </div>
